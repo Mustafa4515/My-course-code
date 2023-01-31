@@ -1,0 +1,153 @@
+<style>
+
+    
+    @keyframes fanWaliAnimation_reverse {
+    
+    from{
+        transform: rotate(0deg);
+    }
+    
+    to{
+        transform: rotate(-360deg);
+    }
+    
+    }
+    
+    @keyframes fanWaliAnimation_forward {
+    
+        from{
+            transform: rotate(0deg);
+        }
+    
+        to{
+            transform: rotate(360deg);
+        }
+        
+    }
+    
+    #meraFan{
+        animation-iteration-count: infinite;
+    }
+    
+    .chaling_reverse{
+        animation: fanWaliAnimation_reverse 1s linear 0s;
+    }
+    .chaling_forward{
+        animation: fanWaliAnimation_forward 1s linear 0s;
+    }
+    
+    </style>
+    
+    <img id="meraFan" src="fan.png" alt="">
+    <button onclick="meraFan.classList.add('chaling_reverse')">Reverse</button>
+    <button onclick="meraFan.classList.add('chaling_forward')">Forward</button>
+    
+    
+    <!-- <style>
+    
+    @keyframes colorWaliAnimation {
+        
+    
+        0%{
+            background-color: red;
+        }
+    
+        25%{
+            background-color: orange;
+        }
+    
+        50%{
+            background-color: forestgreen;
+        }
+    
+        75%{
+            background-color: chartreuse;
+        }
+    
+        100%{
+            background-color: violet;
+        }
+    
+    }
+    
+    #box{
+        width: 100px;
+        height: 100px;
+        animation: colorWaliAnimation 3s linear 0s;
+        animation-iteration-count: infinite;
+    }
+    
+    </style>
+    
+    
+    <div id="box"></div>
+     -->
+    
+    <!-- 
+    <style>
+    
+        @keyframes meriAnimation {
+            0%{
+                right: 0;
+                bottom:0;
+            }
+            20%{
+                right: 20%;
+                bottom: 40%;
+            }
+    
+            30%{
+                right: 30%;
+                bottom: 0%;
+            }
+    
+            40%{
+                right: 40%;
+                bottom: 40%;
+            }
+    
+            50%{
+                right: 50%;
+                bottom: 0%;
+            }
+    
+            60%{
+                right: 60%;
+                bottom: 40%;
+            }
+    
+            70%{
+                right: 70%;
+                bottom: 0%;
+            }
+    
+            
+            80%{
+                right: 80%;
+                bottom: 40%;
+            }
+            90%{
+                right: 90%;
+                bottom: 0%;
+            }
+            100%{
+                right: 100%;
+                bottom: 40%;
+            }
+        
+        }
+    
+        #some{
+            animation: meriAnimation 10s linear 0s;
+            animation-fill-mode: forwards;
+    
+            width: 50px;
+    
+            position: absolute;
+            right: 0;
+            bottom:0;
+        }
+    
+    </style>
+    
+    <img id="some" src="copter.png" alt=""> -->

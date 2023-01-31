@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #parent{
+            width: 600px;
+            height: 600px;
+            border: 1px solid;
+            display: grid;
+            column-gap: 5px;
+            row-gap: 5px;
+            grid-template:"a1 a2 a3"
+                            "a4 a5 a5"
+                            "a6 a5 a5" ;
+        }
+        .item:nth-child(1){
+            background-color: blue;
+            grid-area: a1;
+        }
+         .item:nth-child(2){
+            background-color: orange;
+            grid-area: a2;
+        }
+         .item:nth-child(3){
+            background-color: green;
+            grid-area: a3;
+        }
+         .item:nth-child(4){
+            background-color: rosybrown;
+            grid-area: a4;
+        }
+         .item:nth-child(5){
+            background-color: yellow;
+            grid-area: a5;
+        }
+         .item:nth-child(6){
+            background-color: chocolate;
+            grid-area: a6;
+        }
+        .item{
+            position: relative;
+        }
+span{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    color: #fff;
+    width: fit-content;
+    font-size: 50px;
+
+    height: fit-content;
+    font-family: segoe UI;
+/}  */
+        #parent {
+            width: calc(100vw - 20px);
+            border: 1px solid;
+            height: 100vh;
+
+            display: grid;
+            column-gap: 5px;
+            row-gap: 5px;
+            grid-template: "a1 a2 a3"
+                "a1 a4 a3"
+                "a5 a5 a5";
+        }
+
+        .item:nth-child(1) {
+            border: 5px solid skyblue;
+            grid-area: a1;
+            background-color: black;
+        }
+
+        .item:nth-child(2) {
+            border: 5px solid olivedrab;
+            grid-area: a2;
+            background-color: black;
+        }
+
+        .item:nth-child(3) {
+            border: 5px solid green;
+            grid-area: a3;
+            background-color: black;
+        }
+
+        .item:nth-child(4) {
+            background-color: black;
+            border: 5px solid blueviolet;
+            grid-area: a4;
+        }
+
+        .item:nth-child(5) {
+            border: 5px solid hotpink;
+            background-color: #000000;
+            grid-area: a5;
+        }
+
+        .item {
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-family: 'gill sans';
+            font-size: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div class="item">
+            <span>A</span>
+        </div>
+        <div class="item">
+            <span>B</span>
+        </div>
+        <div class="item">
+            <span>C</span>
+        </div>
+        <div class="item">
+            <span>E</span>
+        </div>
+        <div class="item">
+            <span>F</span>
+        </div>
+    </div>
+    <!-- <div id="parent">
+        <div class="item">
+            <span>A</span>
+        </div>
+        <div class="item">
+            <span>B</span>
+        </div>
+        <div class="item">
+            <span>C</span>
+        </div>
+        <div class="item">
+            <span>D</span>
+
+        </div>
+        <div class="item">
+            <span>E</span>
+
+        </div>
+        <div class="item">
+            <span>F</span>
+
+        </div>
+    </div>  -->
+</body>
+
+</html>

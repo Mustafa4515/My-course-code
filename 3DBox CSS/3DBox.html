@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DBox</title>
+       <style>
+        
+        #adjustBox {
+            transition: transform 3s linear 0s;
+            transform: translate(-17px, -70px);
+        }
+
+        #box div div {
+            position: absolute;
+        }
+
+        #box:hover {
+            transform: rotate(-50deg);
+        }
+
+        #box:hover #adjustBox {
+            transform: scale(1.5) translate(-17px, -70px);
+            
+        }
+
+        #box {
+
+            width: 100px;
+            height: 100px;
+            background: magenta;
+            transform-origin: center;
+            transform: rotate(0deg);
+            transition: transform 3s linear 0s;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 174px;
+            margin: auto;
+        }
+
+        #front {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transform: skew(-33deg, 0deg);
+            height: 45px;
+            top: 55px;
+            left: 14px;
+
+        }
+
+        #side {
+            width: 100px;
+            height: 100px;
+            background-color:blue;
+            left: 100px;
+            top: 77px;
+            transform: skew(0deg, -55deg);
+            width: 29px;
+
+        }
+
+        #top {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            top: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <div id="adjustBox">
+            <div id="front"></div>
+            <div id="side"></div>
+            <div id="top"></div>
+        </div>
+    </div>
+</body>
+</html>

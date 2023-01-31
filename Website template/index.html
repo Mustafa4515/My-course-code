@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue Helvetica, Arial, sans-serif;
+        }
+
+        #darkPatti {
+            background-color: #132033;
+            height: 40px;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        #contentSection {
+            float: left;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+
+        .icon {
+            width: 20px;
+            vertical-align: middle;
+            margin-left: 15px;
+        }
+        .content{
+            text-decoration: none;
+        }
+        .icon+span {
+            color: #fff;
+            margin-left: 5px;
+        }
+        .icon:nth-child(3) {
+            margin-left: 10px;
+        }
+
+        #socialSection {
+            float: right;
+            margin-top: 10px;
+            margin-right: 100px;
+        }
+        #back{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 4;
+        }
+        #background{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #132033;
+            opacity: 0.6;
+}
+        
+    </style>
+</head>
+
+<body>
+    <header>
+            <div id="background"></div>
+        <div id="darkPatti">
+            <div id="contentSection">
+                <a class="content" href="#">
+                <img class="icon" src="icon.PNG" alt="">
+                <span>email@gmail.com</span></a>
+                <a class="content" href="#">
+                <img class="icon" src="icon.PNG" alt="">
+                <span>+92 344444444444</span></a>
+            </div>
+            <div id="socialSection">
+                <img src="soical.PNG" alt="">
+            </div>
+        </div>
+        <img id="back" src="h1.jpg" alt="">
+        <nav>
+            <ul>
+                <li>
+                    <img src="./logo3.png" alt="">
+                    <h2>Aievari</h2>
+                </li>
+                <li>HOME</li>
+                <li>ABOUT US</li>
+                <li>INVESTMENT</li>
+                <li>PAGES</li>
+                <li>BLOG</li>
+                <li>CONTACTS</li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
