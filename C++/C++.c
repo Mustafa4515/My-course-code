@@ -45,15 +45,28 @@
 //     printf("Suqare of A Value = %d\nSuqare of B Value = %d\nSuqare of C Value = %d\n", A * A, B * B,C * C);
 //     printf("Thanks");
 // }
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-int main()
-{
-    double num, result;
-    printf("Enter a number: ");
-    scanf("%lf", &num);
-    result = sqrt(num);
-    printf("The square root of %lf is %lf", num, result);
-    return 0;
-}
+// int main()
+// {
+//     double num, result;
+//     printf("Enter a number: ");
+//     scanf("%lf", &num);
+//     result = sqrt(num);
+//     printf("The square root of %lf is %lf", num, result);
+//     return 0;
+// }
+////////////////////////////////
+// #include <iostream>
+// using namespace std;
+
+// int A=20;;
+
+// int main() {
+//     int A = 30;
+//     cout << ::A << endl;  // prints the value of the global variable A
+//     return 0;
+// }
+
+

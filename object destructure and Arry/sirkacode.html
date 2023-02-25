@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="addStudent()">
+        <input id="user_name" /><br />
+        <input id="user_email" /><br />
+        <input id="user_uni" /><br />
+        <button>Add Student</button>
+    </form>
+    <table id="myTable" border="1">
+    
+    </table>
+    
+    <script>
+    
+      let students = null;
+    
+      let loadedData = localStorage.getItem('kuchUsers') || "[]";
+       students = JSON.parse(loadedData);
+    
+       showStudents();
+    
+      function addStudent(){
+    
+        let nyaStudent = {
+          name:user_name.value,
+          email:user_email.value,
+          uni:user_uni.value
+        };
+        
+        students.push(nyaStudent);
+    
+        localStorage.setItem("kuchUsers", JSON.stringify(students) )
+    
+        showStudents();
+    
+        event.preventDefault();
+    
+        console.log("code chaling")
+      }
+    
+      function showStudents(){
+    
+        myTable.innerHTML = '';
+    
+        students.forEach(function(student, someIndex){
+          myTable.innerHTML += '<tr><td>'+student.name+'</td><td>'+student.email+'</td><td>'+student.uni+'</td><td><button onclick="deleteUser('+someIndex+')">Delete</button><button onclick="updateUser('+someIndex+')">Edit</button></td></tr>';
+        })
+    
+      }
+    
+    
+      function updateUser(koiIndex){
+    
+        students[koiIndex].name =  prompt("ente rnew name")
+        students[koiIndex].email =  prompt("ente rnew email")
+        students[koiIndex].uni =  prompt("ente uni name")
+        
+        localStorage.setItem("kuchUsers", JSON.stringify(students) )
+    
+    
+        showStudents();
+    // alert(koiIndex)
+    }
+      function deleteUser(koiIndex){
+    
+        students.splice(koiIndex, 1);
+        localStorage.setItem("kuchUsers", JSON.stringify(students) )
+    
+        showStudents();
+        // alert(koiIndex)
+      }
+    
+    
+    // regnerative array
+    
+    // let data = ["ali", "yahya", "aqsa"];
+    
+    // let newData = data.map(function(myName, meraIndex){
+    //       return "hello " + myName;
+    // })
+    
+    // console.log(newData)
+    // let data = [2,3,4,5];
+    
+    // let nums = data.map(function(myNum){
+    //   return myNum* myNum
+    // })
+    
+    // console.log(nums)
+    
+    // array destructure
+    // let data = [10,11,12,13,14];
+    // let [a] = data;
+    
+    
+    // object destructure
+    let student = {
+      name:"ali",
+      uni:"GC",
+      city:"FSD"
+    }
+    
+    test(student)
+    
+    function test({name}){
+    
+      console.log(name);
+    
+    }
+    
+    // let {name, uni} = student;
+    // alert(name)
+    
+    // let name = student.name
+    
+    
+    
+    </script>
+</body>
+</html>

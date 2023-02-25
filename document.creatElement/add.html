@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style>
+      .item {
+        width: 250px;
+      }
+    </style>
+    <table border="1px">
+      <tr>
+        <td id="Add_one">0</td>
+        <td id="Add_two">0</td>
+        <td id="Add_three">0</td>
+        <td id="Add_four">0</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <button onclick="addObject('1.jpg')">Add one Pic</button>
+          <button onclick="addObject('2.jpg')">Add two pc</button>
+          <button onclick="addObject('3.jpg')">Add three Pic</button>
+          <button onclick="addObject('4.jpg')">Add four Pic</button>
+        </td>
+      </tr>
+    </table>
+    <div id="container"></div>
+    <script>
+      function addObject(someData) {
+        if (someData == '1.jpg') {
+          let oldData = +Add_one.innerText;
+          Add_one.innerText = ++oldData;
+        } else if (someData == '2.jpg') {
+          let oldData = +Add_two.innerText;
+          Add_two.innerText = ++oldData;
+        } else if (someData == '3.jpg') {
+          let oldData = +Add_three.innerText;
+          Add_three.innerText = ++oldData;
+        } else if (someData == '4.jpg') {
+          let oldData = +Add_four.innerText;
+          Add_four.innerText = ++oldData;
+        }
+        let myTag = document.createElement('img');
+        myTag.src = someData;
+        myTag.className = 'item';
+        myTag.onclick = function () {
+          if (someData == '1.jpg') {
+            let oldData = +Add_one.innerText;
+            Add_one.innerText = --oldData;
+          } else if (someData == '2.jpg') {
+            let oldData = +Add_two.innerText;
+            Add_two.innerText = --oldData;
+          } else if (someData == '3.jpg') {
+            let oldData = +Add_three.innerText;
+            Add_three.innerText = --oldData;
+          } else if (someData == '4.jpg') {
+            let oldData = +Add_four.innerText;
+            Add_four.innerText = --oldData;
+          }
+          myTag.remove();
+        };
+        container.appendChild(myTag);
+      }
+    </script>
+  </body>
+</html>

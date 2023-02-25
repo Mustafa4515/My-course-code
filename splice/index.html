@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let addKaro=prompt("Enter Add Item")+",";
+        // let removeItem=prompt("Enter number Remove ");
+        // removeOrAddKar(addKaro,someItem);
+        // function removeOrAddKar(myArry,someItem){
+        //     let anyIndex=myArry[myArry.length-someItem];
+        //     console.log(anyIndex);
+        // }
+     ///////////////////////////////////////////////////
+        // let array = [11, 12, 13, 14, 14, 15, 16, 17, 18, 19, 20, 21]
+        // let action = prompt("what do you want add or remove")
+        // function addNumber(array) {
+        //     let number = +prompt("enter the number")
+        //     array.push(number)
+        // }
+        // function removeNumber(array) {
+        //     let number = +prompt("enter the number")
+        //     if (array.includes(number)) {
+        //         let index = array.indexOf(number)
+        //         array.splice(index, 1)
+
+        //     }else{
+        //            console.log("Oops number not exist in array")
+        //     }
+
+        // }
+        // if (action == "add") {
+        //     (addNumber(array))
+        // } else {
+        //     (removeNumber(array))
+        // }
+
+        // console.log(array)
+        /////////////////////////
+        while (true) {
+            let data=prompt("new value add ,del and update");
+            let someData=[10,20,30,40,50,60];
+            if(data == "add"){
+                let newValu= +prompt("enter value");
+                someData.push(newValu);
+                console.log(someData);
+            }else if(data == "del"){
+                let newValu=+prompt("remove")
+                let lastKaData=someData.indexOf(newValu);
+                someData.splice(lastKaData,1);
+                console.log(someData);
+            }
+        else if(data == "update"){
+            let oldValue=+prompt("old value");
+            let oldValueKaIndex=someData.indexOf(oldValue);
+            let newValue= +prompt("enter new value");
+            someData.splice(oldValueKaIndex,1,newValue);
+            console.log(someData);
+        }else if(data == "q"){
+            break;
+        }
+        console.log(data);
+    }
+    
+        
+    </script>
+</body>
+</html>

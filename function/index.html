@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function evenAndOdd(){
+        //     let number1=prompt("ENTER NUMBER 1");
+        //     if(number1%2==0){
+        //         console.log("even number ha");
+        //     }else{
+        //         console.log("odd number ha");
+        //     }
+        // }
+        // evenAndOdd();
+
+        // let numbers = prompt("Enter multiple numbers separated by commas:").split(",");
+        // for (let i = 0; i < numbers.length; i++) {
+        //     let num = numbers[i];
+        //     if (num % 2 == 0) {
+        //         console.log(num + " is even");
+        //     } else {
+        //         console.log(num + " is odd");
+        //     }
+        // }
+
+        let rows = parseInt(prompt("Enter the number of rows:"));
+        let cols = parseInt(prompt("Enter the number of columns:"));
+
+        let table = document.createElement("table");
+        table.style.borderCollapse = "collapse";
+
+        for (let i = 0; i < rows; i++) {
+            let tr = document.createElement("tr");
+            for (let j = 0; j < cols; j++) {
+                let td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.style.padding = "10px";
+                td.innerHTML = (i + 1) * (j + 1);
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+
+        document.body.appendChild(table);
+
+// let num =  prompt("ente rnumber");
+// tableBanao(num);
+// function tableBanao(num1) {
+// for(let i = 1;i<=10;i++){
+//     console.log(num1 + " * " + i + ' = ' + num1 * i)
+// }
+// }
+    </script>
+</body>
+
+</html>

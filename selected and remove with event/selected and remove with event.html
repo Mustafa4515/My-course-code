@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #parent {
+      display: flex;
+      column-gap: 20px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: blueviolet;
+    }
+    .selected {
+      outline: 5px solid black;
+    }
+  </style>
+  <body>
+    <div id="parent" onclick="selectElement()">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <script>
+      let oldWalaTag;
+      document.onkeydown=function(e){
+
+          if(e.key='Delete'){
+            oldWalaTag.remove();
+      }
+      console.log(e.key);
+      }
+      function selectElement() {
+        if (oldWalaTag) {
+          oldWalaTag.classList.remove('selected');
+        //   console.log(oldWalaTag);
+        }
+        event.target.classList.add('selected');
+        // console.log(event);
+        oldWalaTag = event.target;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<style>
+    #parent{
+        width: 500px;
+        height: 600px;
+        background-color: blue;
+    }
+    #child{
+        width: 200px;
+        height: 200px;
+        background-color: black;
+    }
+</style>
+<body>
+    <div id="parent"onclick="parentBOx()">
+        <div id="child"onclick="childBOx()"></div>
+    </div>
+    <script>
+function parentBOx(){
+console.log("parnt chaling");
+}
+function childBOx(){
+    event.stopPropagation()
+    console.log("child chaling");
+}
+
+    </script>
+</body>
+</html>

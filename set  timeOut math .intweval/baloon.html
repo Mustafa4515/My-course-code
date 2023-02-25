@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        #baloon{
+            width:100px;
+            position: absolute;
+            top:80%;
+        }
+        
+        
+        #abc{
+            width:500px;
+            height: 500px;
+            border:1px solid;
+            margin:auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .right{
+            transform: scaleX(-1);
+        }
+        
+        </style>
+        
+        <div id="abc">
+        
+            <img src="baloon.jpeg" class="right" alt="" id="baloon">
+        
+        </div>
+        <script>
+
+
+
+            let key = setInterval(function(){
+                
+                // baloon.offsetTop  = 100;
+                
+                baloon.style.top = (baloon.offsetTop -2)+'px';
+               
+                if( (baloon.offsetTop + baloon.offsetHeight) <= 0){
+                    baloon.style.top  = "100%"
+                }
+                
+            }, 0)
+            
+            </script>
+        
+        
+</body>
+</html>

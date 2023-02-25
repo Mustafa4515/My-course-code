@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+
+.box:hover{
+    opacity: 0.6;
+}
+
+.box{
+    width:100px;
+    height:100px;
+    background-color: orange;
+}
+
+#parent1{
+    display: flex;
+    column-gap: 10px;
+    border:2px solid red;
+}
+.selected{
+    outline:5px solid black
+}
+
+</style>
+
+<!-- event -->
+<div id="parent1">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+<script>
+
+    let oldWalaTag = [];
+
+    document.onclick = selectElement;
+
+    document.onkeydown = function(abc){
+
+        if(abc.ctrlKey == true && abc.key == "a"){
+
+            document.querySelectorAll('.box').forEach(function(meraTag){
+                meraTag.classList.add('selected');
+                oldWalaTag.push(meraTag)
+            })
+
+        }
+        else if(abc.key == "Delete"){            
+            oldWalaTag.forEach(function(tag){
+                tag.remove();
+            })   
+        }
+        console.log(abc.key);
+    }
+    function selectElement(){
+
+        if(event.target.id == "parent1" || event.target.nodeName == "BODY"){
+            oldWalaTag.forEach(function(tag){
+                tag.classList.remove('selected');
+            })   
+            return
+        }
+
+        if(event.ctrlKey == false){     
+            oldWalaTag.forEach(function(tag){
+                tag.classList.remove('selected');
+            })   
+        }        
+        if(event.target.classList.contains('selected')){
+            event.target.classList.remove('selected');
+        }else{
+            event.target.classList.add('selected');
+        }
+        
+
+        oldWalaTag.push(event.target);
+    }
+
+
+</script>
+</body>
+</html>

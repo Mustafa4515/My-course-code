@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="addStudent()">
+      <input id="user_name" placeholder="Name" /><br />
+      <input id="user_email" placeholder="Email" /><br />
+      <input id="user_uni" placeholder="Uni" /><br />
+      <button>Add Student</button>
+    </form>
+    <table id="myTable" border="1px"></table>
+    <script>
+      let students = [];
+      let localData = localStorage.getItem('gm') || [];
+      students = JSON.parse(localData);
+      showStudent();
+      function addStudent() {
+        let newStudent = {
+          name: user_name.value,
+          email: user_email.value,
+          uni: user_uni.value,
+        };
+        students.push(newStudent);
+        localStorage.setItem('gm', JSON.stringify(students));
+        event.preventDefault();
+        showStudent();
+        // console.log("code chaling");
+      }
+      function deleteUser(meraIndex) {
+        students.splice(meraIndex, 1);
+        localStorage.setItem('gm', JSON.stringify(students));
+
+        showStudent();
+      }
+      function updateUser(meraIndex) {
+        students[meraIndex].name = prompt('Enter Name');
+        students[meraIndex].email = prompt('Enter Email');
+        students[meraIndex].uni = prompt('Enter Uni');
+        localStorage.setItem('gm', JSON.stringify(students));
+        showStudent();
+      }
+      function showStudent() {
+        myTable.innerHTML = '';
+        students.forEach(function (student, meraIndex) {
+          myTable.innerHTML +=
+            '<tr><td>' +
+            student.name +
+            '</td><td>' +
+            student.email +
+            '</td><td>' +
+            student.uni +
+            '</td><td><button onclick="deleteUser(' +
+            meraIndex +
+            ')">Delete</button><button onclick="updateUser(' +
+            meraIndex +
+            ')">Edit</button></td></tr>';
+        });
+      }
+    </script>
+  </body>
+</html>

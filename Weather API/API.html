@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.3/axios.min.js"
+    integrity="sha512-wS6VWtjvRcylhyoArkahZUkzZFeKB7ch/MHukprGSh1XIidNvHG1rxPhyFnL73M0FC1YXPIXLRDAoOyRJNni/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <body>
+    <div id="box">
+        <span id="city"></span>,<span id="region"></span>,
+        <span id="country"></span>
+        <h2 id="weather">weather :</h2>
+        <h4 id="date">last_updated :</h4>
+    </div>
+    <script>
+      // 815c2253cb8e40588c755148221511
+      let cityName=prompt("enter city");
+      axios
+        .get(
+            'http://api.weatherapi.com/v1/current.json?key=24df5fcf9b6c4eaebb770740222103&q=' +
+            cityName +
+            '&aqi=no'
+        )
+        .then(function (resp) {
+          console.log(resp.data.current);
+        });
+      //
+      //Promise
+      downloadfile()
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((data) => {
+          console.log(data);
+        });
+      function downloadfile() {
+        return new Promise(function (success, faile) {
+          setTimeout(() => {
+            success('success');
+          }, 4000);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // let arry =[1,2,3,4,5,6,7,8,9,];
+        // let arryNumber = arry.filter((num) => num % 2 == 0);
+        // console.log(arryNumber);
+////////////////////////////////////////////////////
+      //   let arry =[1,2,3,4,5,44,5,6,7,8,9,];
+      // for(let i=0;i<arry.length;i++){
+      //   if(arry[i]%2==0){
+      //     arry.splice(i,1);
+      //     i--;
+      //   }
+      // }
+      // console.log(arry);
+       
+
+      /////////////////////////////////////////////
+      
+      // let array = [10, 20, 30, 40, 50,];
+      // let numberToRemove = +prompt("Enter number");
+      // let filteredArray = removeNumber(array, numberToRemove);
+      // console.log(filteredArray);
+      // function removeNumber(array, numberToRemove) {
+      //   let newArray = [];
+      //   for (let i = 0; i < array.length; i++) {
+      //     if (array[i] !== numberToRemove) {
+      //       newArray.push(array[i]);
+      //     }
+      //   }
+      //   return newArray;
+      // }
+
+      // let arry=[1,2,3,4,5,6,7,8,9];
+      // for(let i=0;i<arry.length;i++){
+      //   if(arry%2==0){
+      //     console.log(arry);
+      //   }
+
+      // }
+//////////////////////////////////////////////////////////////////////
+        let data=[1,2,3,4,5,6,7,8];
+        for(let i=0;i<data.length;i++){
+          for(let j=0;j<data[i];j++){
+            data.splice(i+1,0,".")
+          }
+        }
+      console.log(data);
+</script>
+  </body>
+</html>

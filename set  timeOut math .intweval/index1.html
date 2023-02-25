@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        #car{
+       width: 100px;
+       transform: scaleX(-1);
+        }
+      
+      </style>
+      
+      <div>
+        <img id="car" src="./../GM_cleanup.png" alt="">
+      
+      </div>
+      
+      <button onclick="direction='right'">Forward</button>
+      <button onclick="direction='left'">Backward</button>
+      <button onclick="direction='stop'">Stop</button>
+      
+      <script>
+      
+         let count = 0;
+         let direction = "";
+      
+         setInterval(move, 5)
+      
+         function move(){
+      
+          if(direction == "right"){
+            count++;
+          }else if(direction== "left"){
+            count--;
+          }else if(direction== "stop"){
+         
+          }
+      
+      
+          car.style.marginLeft = count+"px";
+      
+         }
+      
+        // setInterval(function(){
+      
+        //   car.style.marginLeft = count+"px";
+        //   count++
+      
+        // }, 5);
+      
+      </script>
+</body>
+</html>

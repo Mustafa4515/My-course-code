@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.adBox{
+    width: 250px;
+    height: 250px;
+    border:1px solid grey
+}
+/* DOM */
+/* document objet model */
+/* DOM = HTML + CSS + JS */
+#myBox{
+    display: flex;
+    column-gap: 5px;
+}
+.picBox{
+    background-color: rgb(37, 37, 37);
+    height:125px;
+    text-align: center;
+}
+.pic{
+    height: 100%;
+}
+</style>
+<div id="myBox">
+
+</div>
+
+<script>
+
+// static sites,, always fixed content
+
+
+// dynamic sites,  content is updated on runtime
+
+// let a =  {title:"apple", src:"a.jpg"};
+
+let imgs = [
+    {title:"apple", src:"https://images.olx.com.pk/thumbnails/328052392-240x180.webp", price:"Rs.190",deccrptionBox:"qwertyuiojhgasdfghdfghjfddfghj"}, 
+    {title:"banana", src:"https://images.olx.com.pk/thumbnails/271606962-240x180.webp", price:"Rs.190",deccrptionBox:"qwertyuiojhgasdfghdfghjfddfghj"},
+    {title:"carrot", src:"https://images.olx.com.pk/thumbnails/328648430-240x180.webp", price:"Rs.190",deccrptionBox:"qwertyuiojhgasdfghdfghjfddfghj"}, 
+    {title:"dates", src:"https://images.olx.com.pk/thumbnails/300966970-240x180.webp", price:"Rs.190",deccrptionBox:"qwertyuiojhgasdfghdfghjfddfghj"}, 
+    {title:"tomato", src:"https://images.olx.com.pk/thumbnails/328704781-240x180.webp", price:"Rs.190",deccrptionBox:"qwertyuiojhgasdfghdfghjfddfghj"}
+];
+
+for(let i=0;i<imgs.length;i++){
+
+    let adBox =  document.createElement('div');
+    adBox.className = "adBox";
+    adBox.innerHTML="<div class=' picBox'>\
+        <img class='pic'src='"+imgs[i].src+"'/></div>\
+        <div class=' detailBox'>\
+            <p class='descBox'>"+imgs[i].title+"</p>\
+            <h2>"+imgs[i].price+"</h2>\
+            <p>"+imgs[i].deccrptionBox+"</p>\
+            </div>"
+            myBox.appendChild(adBox)
+            
+            
+        }
+
+//    let picBox =  document.createElement('div');
+//    picBox.className = "picBox";
+
+//    let pic =  document.createElement('img');
+//    pic.className = "pic";
+//    pic.src = imgs[i].src
+
+//    picBox.append(pic);
+
+//    adBox.append(picBox);
+
+//    let detailBox =  document.createElement('div');
+//    detailBox.className = "detailBox";
+
+//    let descBox =  document.createElement('p');
+//    descBox.className = "descBox";
+//    descBox.innerText = imgs[i].title
+
+//    let priceBox =  document.createElement('h2');
+//    priceBox.className = "descBox";
+//    priceBox.innerText = imgs[i].price
+//    let deccrptionBox =  document.createElement('p');
+//    deccrptionBox.className = "descBox";
+//    deccrptionBox.innerText = imgs[i].deccrptionBox
+
+//    detailBox.append(descBox, priceBox,deccrptionBox)
+
+//    adBox.append(detailBox);
+
+
+</script>
+</body>
+</html>
