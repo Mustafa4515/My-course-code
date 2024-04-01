@@ -1,0 +1,95 @@
+
+<script src="jquery.min.js"></script>
+<script src="dist/jquery.contextMenu.js"></script>
+<link rel="stylesheet" href="dist/jquery.contextMenu.css">
+<script src="dist/jquery.ui.position.js"></script>
+
+<style>
+
+#parents{
+    column-gap: 10px;
+    
+    display: flex;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+
+</style>
+
+<span class="context-menu-one btn btn-neutral">right click me</span>
+
+<div id="parents">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+</div>
+
+<!-- <div id="container"></div> -->
+
+<script>
+
+    let copyWalaTag;
+
+$(function() {
+        $.contextMenu({
+            selector: '.box', 
+            callback: function(key, options) {
+
+                if(key == "delete"){
+                    options.$trigger.remove()
+                }else if(key == "copy"){
+                    copyWalaTag =  options.$trigger;
+                }else if(key == "paste"){
+                    parents.appendChild(copyWalaTag[0].cloneNode(true));
+                }
+                // var m = "clicked: " + key;
+                // window.console && console.log(m) || alert(m); 
+            },
+            items: {
+                "new": {name: "New", icon: "new"},
+                "edit": {name: "Edit", icon: "edit"},
+                "cut": {name: "Cut", icon: "cut"},
+               copy: {name: "Copy", icon: "copy"},
+                "paste": {name: "Paste", icon: "paste"},
+                "delete": {name: "Delete", icon: "delete"},
+                "sep1": "---------",
+                "quit": {name: "Quit", icon: function(){
+                    return 'context-menu-icon context-menu-icon-quit';
+                }}
+            }
+        });
+
+        $('.context-menu-one').on('click', function(e){
+            console.log('clicked', this);
+        })    
+    });
+
+// $('#container').append('<span>cat</span>');
+
+    // let span = document.createElement('span');
+    // span.innerText = "Car";
+    // container.appendChild(span)
+
+// let student  = {
+//     name:"khurram",
+//     city:"FSD",
+//     uni:"GC"
+// }
+
+// for(let some in student){
+//     console.log(some, student[some])
+// }
+
+// let data = [10,20,30,40,50,60];
+
+// for(let some in data){
+//     console.log(some, data[some])
+// }
+
+
+</script>

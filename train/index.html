@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+
+        #trainBox{
+            display: flex;
+            column-gap: 10px;
+            row-gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .coach{
+            display: flex;
+            row-gap: 5px;
+            column-gap: 5px;
+            width: 200px;
+            height: 200px;
+            flex-wrap: wrap;
+            background-color: green;
+        }
+
+        .seatBox{
+            width: 40px;
+            height: 40px;
+            background-color: cyan;
+
+        }
+        
+    </style>
+</head>
+<body>
+
+<div id="trainBox"></div>
+
+    <select  id="stations_ui"></select>
+    <button onclick="seatBookKaro()">Book Karo</button>
+    
+    <script>
+
+        let stations = [
+            "Hyderabad",
+            "Rohri",
+            "Sadiqabad",
+            "Bahawalpur",
+            "Multan",
+            "Toba",
+            "Gojra",
+            "Faisalabad",
+            "Wazir abad",
+            "Rawal Pindi",
+            "Peshawar"
+        ];
+
+        stations.forEach(function(station){
+            stations_ui.innerHTML += '<option>'+station+'</option>';
+        })
+
+       let coaches = [
+        {
+            no:1,
+            seats:10,
+            booked:0
+        },
+        {
+            no:2,
+            seats:10,
+            booked:0
+        },
+        {
+            no:3,
+            seats:10,
+            booked:0
+        },
+        {
+            no:4,
+            seats:10,
+            booked:0
+        },
+        {
+            no:5,
+            seats:10,
+            booked:0
+        },
+        {
+            no:6,
+            seats:10,
+            booked:0
+        },
+        {
+            no:7,
+            seats:10,
+            booked:0
+        },
+        {
+            no:8,
+            seats:10,
+            booked:0
+        },
+        {
+            no:9,
+            seats:10,
+            booked:0
+        },
+        {
+            no:10,
+            seats:10,
+            booked:0
+        }
+       ]
+
+    //    coaches.forEach(function(coach){           
+    //        let $coachBox =  $('<div class="coach"></div>');
+    //        for(let i = 0;i<10;i++){
+    //             $coachBox.append('<div class="seatBox"></div>')
+    //         }
+    //         $('#trainBox').append($coachBox);
+    //    })
+
+       coaches.forEach(function(coach){
+            let coachBox = document.createElement('div');
+            coachBox.className = 'coach';
+            for(let i = 0;i<10;i++){
+                let seatBox = document.createElement('div');
+                seatBox.className = 'seatBox';
+                coachBox.append(seatBox);
+            }
+            trainBox.appendChild(coachBox)
+       })
+
+
+        function seatBookKaro(){
+
+            let itniSeats = +prompt("kinnian seatan");
+            
+            let stationNum = stations_ui.selectedIndex;
+
+            if(stationNum <= 7){
+                // faisalabad wali
+
+                let bogies = coaches.slice(0,7);
+
+                bogies.forEach(function(bogie){
+                        //   6      < 10
+                        //   2      < 4
+                        //   3      < 2                        
+                     if(itniSeats < (bogie.seats - bogie.booked)){
+                        bogie.booked +=   itniSeats;
+                        itniSeats= 0;
+                     }else{                        
+                        let remaing = bogie.seats - bogie.booked;
+                        itniSeats = itniSeats - remaing;
+                        // itniSeats = remaing;                                               
+                        bogie.booked += remaing;                       
+                     }
+
+                })
+
+
+            }else{
+                
+
+                let bogies = coaches.slice(7);
+
+                bogies.forEach(function(bogie){
+
+                        //   12      < 10
+                     if(itniSeats < bogie.seats){
+                        bogie.booked =   itniSeats;
+                        itniSeats= 0;
+                     }else{
+
+                        let remaing = itniSeats - bogie.seats
+                        itniSeats = remaing;
+                        bogie.booked = bogie.seats;
+
+                     }
+
+                })
+
+            }
+
+        }
+
+    //     let num  = 5;
+
+    //   let total =  getFac(5);
+    //   console.log(total)
+
+        // function getFac(myNum){
+
+        //     if(myNum == 1){
+        //         return 1;
+        //     }else{
+        //        return getFac(myNum - 1) * myNum
+        //     }
+
+        // }
+
+        // let res = 1;
+
+        // for(let i = 1;i<=num;i++){            
+        //     res = res * i;
+        //     1   =  1  * 1
+        //     2    = 1  * 2
+        //     6     = 2  * 3
+        //     24    =  6 * 4
+        //     120       = 24 * 5
+        // }
+
+        // alert(res)
+        //  5 x 4 x 3 x 2 x 1
+        //  120
+
+        //  15
+        //  15 14 13 12
+
+        // Recursion
+        // some();
+
+
+        function some(){
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

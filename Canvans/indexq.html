@@ -1,0 +1,57 @@
+<!-- <script src="paper-full.min.js"></script>
+<style>
+
+#myCanvas{
+    border:1px solid red;
+}
+</style>
+
+<canvas id="myCanvas" width="500" height="500"></canvas>
+
+<script>
+
+    paper.setup(myCanvas);
+
+    let dragginStart = false;
+
+    var meraCircle = new paper.Path.Circle(new paper.Point(80, 50), 30);
+    meraCircle.fillColor = 'red';
+    meraCircle.strokeColor = 'black';
+
+    meraCircle.on('mousedown', function(e){
+        dragginStart = true;
+    });
+    meraCircle.on('mousemove', function(e){
+        if(dragginStart){
+            meraCircle.position.x = e.event.clientX;
+            meraCircle.position.y = e.event.clientY;
+        }
+       console.log(e.event.clientX, e.event.clientY);
+    });
+
+    meraCircle.on('mouseup', function(e){
+        dragginStart = false;
+    })
+
+    // meraCircle.on('click', function(e){
+    //     console.log('code chaling')
+    //     meraCircle.style.fillColor = 'rgb('+Math.random() * 255+','+Math.random() * 255+','+Math.random() * 255+')'
+    // });
+
+
+</script> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas Example</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "red";
+      ctx.fillRect(10, 10, 50, 50);
+    </script>
+  </body>
+</html>

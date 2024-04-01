@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myCanvas {
+        border: 1px solid red;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="600"></canvas>
+    <script>
+      let color = Math.floor(Math.random() * 2) == 0 ? 'orange' : 'blue';
+      let color1 = Math.floor(Math.random() * 2) == 0 ? 'red' : 'yellow';
+      let marker = myCanvas.getContext('2d');
+      // Triangle
+      //   marker.strokeRect(100, 50, 300, 300);
+      //   marker.fillStyle = color;
+      //   marker.fillRect(100, 50, 300, 300);
+      ////// Damind
+      marker.lineTo(200,100);
+      marker.lineTo(300,0)
+     
+      marker.stroke();
+      //   marker.moveTo(250, 250);
+      //   marker.lineTo(300, 150);
+      //   marker.lineTo(350, 250);
+      //   marker.lineTo(300, 350);
+      //   marker.lineTo(250, 250);
+      //   marker.closePath();
+      //   marker.stroke();
+      //   marker.fillStyle=color1;
+        // marker.fill();
+    </script>
+  </body>
+</html>

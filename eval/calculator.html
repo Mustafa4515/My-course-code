@@ -36,10 +36,10 @@
     <script>
       function process() {
         if (event.target.innerText == '=') {
-          let res = eval(displayBox.value);
-          displayBox.value = res;
+          let res = eval(document.createElementById('displayBox').innerText);
+          (document.createElementById('displayBox').innerText) = res;
         } else {
-          displayBox.value += event.target.innerText;
+          (document.createElementById('displayBox').innerText) += event.target.innerText;
         }
       }
     </script>
